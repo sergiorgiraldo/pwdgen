@@ -439,3 +439,4 @@ document.addEventListener('DOMContentLoaded', () => {
     /* generate trigger */
     app.generate();
 });
+
