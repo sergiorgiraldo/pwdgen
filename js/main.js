@@ -326,6 +326,19 @@ let app = {
             /* universal character generation */
             app.printPassword(app.getRandomChar(strLowercase + strUppercase + strDigit + strSymbol));
         }
+        var strength = getStrengthPercent(app.dom.password.innerText);
+        if (strength >= 90){
+            app.dom.password.style.borderBottomColor = "lime";
+        }
+        if (strength >= 70 && strength < 90){
+            app.dom.password.style.borderBottomColor = "aqua";
+        }
+        if (strength >= 50 && strength < 70){
+            app.dom.password.style.borderBottomColor = "gold";
+        }
+        if (strength < 50){
+            app.dom.password.style.borderBottomColor = "red";
+        }
     }
 };
 
@@ -439,3 +452,89 @@ document.addEventListener('DOMContentLoaded', () => {
     /* generate trigger */
     app.generate();
 });
+
+function getStrengthPercent(inputPassword){
+    var percent = 0;
+    percent = percent + percentByLength(inputPassword);
+    percent = percent + (percentByUppercase(inputPassword));
+    percent = percent + (percentByChar(inputPassword));
+    percent = percent + (percentByNum(inputPassword));
+    percent = charRepetition(percent, inputPassword);
+    
+    return percent;
+}
+
+function percentByLength(inputPassword){
+    if(inputPassword.length >= 16) return 25;
+    else if(inputPassword.length >= 8) return 15;
+    else if(inputPassword.length > 0) return 5;
+    else return 0;
+}
+
+function percentByUppercase(inputPassword){
+    var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var noOfUpperCase = [];
+
+    inputPassword.split('').forEach(char => {
+        if(letters.includes(char)) noOfUpperCase.push(char);
+    });
+
+    if(inputPassword.length - noOfUpperCase.length >= inputPassword.length) return 0;
+    else if(inputPassword.length - noOfUpperCase.length >= 16) return 25;
+    else if(inputPassword.length - noOfUpperCase.length >= 8) return 15;
+    else if(inputPassword.length - noOfUpperCase.length > 0) return 5;
+    else return 0;
+}
+
+function percentByChar(inputPassword){
+    var allChar = '`,.~{}()[]/+_=-!@#$%^&*|\\\'":?';
+    var noOfChar = [];
+
+    inputPassword.split('').forEach(char => {
+        if(allChar.includes(char)) noOfChar.push(char);
+    });
+
+    if(inputPassword.length - noOfChar.length >= inputPassword.length) return 0;
+    else if(inputPassword.length - noOfChar.length >= 16) return 25;
+    else if(inputPassword.length - noOfChar.length >= 8) return 15;
+    else if(inputPassword.length - noOfChar.length > 0) return 5;
+    else return 0;
+}
+
+function percentByNum(inputPassword){
+    var allChar = '1234567890';
+    var noOfChar = [];
+
+    inputPassword.split('').forEach(char => {
+        if(allChar.includes(char)) noOfChar.push(char);
+    });
+
+    if(inputPassword.length - noOfChar.length >= inputPassword.length) return 0;
+    else if(inputPassword.length - noOfChar.length >= 16) return 25;
+    else if(inputPassword.length - noOfChar.length >= 8) return 15;
+    else if(inputPassword.length - noOfChar.length > 0) return 5;
+    else return 0;
+}
+
+function charRepetition(percent, inputPassword){
+    var allChar = inputPassword.split('');
+    console.log(allChar);
+    var reps = [];
+
+    for (var currentPosition = 0; currentPosition < allChar.length; currentPosition++) {
+        for(var inc = 1; inc <= 2; inc++){
+            var nextPosition = currentPosition + inc;
+            if(allChar[currentPosition] == allChar[nextPosition] || allChar[nextPosition] == (parseInt(allChar[currentPosition]) + 1)){
+                if(!reps.includes(allChar[currentPosition])) reps.push(allChar[currentPosition]); 
+                else break;
+            }
+        }
+    }
+
+    console.log(reps);
+    
+    if(reps.length >= 3) return percent - 25;
+    if(reps.length == 2) return percent - 15;
+    if(reps.length == 1) return percent - 5;
+    return percent;
+}

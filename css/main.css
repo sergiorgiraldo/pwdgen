@@ -87,6 +87,7 @@ a:hover {
     word-break: break-all;
     text-align: center;
     border: 2px solid #000;
+    border-bottom: 5px dotted;
     max-width: 800px;
     margin: 0 auto 15px;
     padding: 2px;
