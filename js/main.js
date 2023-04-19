@@ -350,7 +350,6 @@ document.addEventListener('DOMContentLoaded', () => {
     app.dom.copy      = $id('appCopy');
     app.dom.generate  = $id('appGenerate');
     app.dom.length    = $id('appLength');
-    app.dom.slider    = $id('appSlider');
     app.dom.lowercase = $id('appLowercase');
     app.dom.uppercase = $id('appUppercase');
     app.dom.digit     = $id('appDigit');
@@ -370,7 +369,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /* set default values */
     app.dom.exclude.value = '01iILl\"oO\'|`';
     app.dom.length.value  = 30;
-    app.dom.slider.value  = 30;
 
     /* callback for `length` input */
     app.dom.length.addEventListener('change', () => {
@@ -391,36 +389,6 @@ document.addEventListener('DOMContentLoaded', () => {
             app.dom.length.value = app.passwordLength.max;
             value = app.passwordLength.max;
         }
-
-        /* set the same value for `slider` */
-        app.dom.slider.value = value;
-
-        /* generate trigger */
-        app.generate();
-    });
-
-    /* callback for `slider` input */
-    app.dom.slider.addEventListener('change', () => {
-        let value = parseInt(app.dom.slider.value, 10);
-
-        /* accept only integer value */
-        if (isNaN(value)) {
-            app.dom.slider.value = app.passwordLength.min;
-            value = app.passwordLength.min;
-        }
-
-        /* check acceptable range */
-        if (value < app.passwordLength.min) {
-            app.dom.slider.value = app.passwordLength.min;
-            value = app.passwordLength.min;
-        }
-        if (value > app.passwordLength.max) {
-            app.dom.slider.value = app.passwordLength.max;
-            value = app.passwordLength.max;
-        }
-
-        /* set the same value for `length` */
-        app.dom.length.value = value;
 
         /* generate trigger */
         app.generate();

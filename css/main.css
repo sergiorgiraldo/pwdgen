@@ -7,11 +7,10 @@ html {
     margin: 0;
     padding: 0;
     font-family: verdana;
-    min-width: 320px;
 }
 
 body {
-    margin: 0;
+    margin-left: 10px;
     padding: 0;
 }
 
@@ -38,15 +37,6 @@ audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
 }
 
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-}
 
 a {
     color: #8cc9f2;
@@ -57,29 +47,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.title {
-    margin: 0.25em 0;
-    padding: 0 4px;
-    text-align: center;
-    font-size: 1.6em;
-}
-
-.subtitle {
-    margin: 0.25em 0 2em;
-    padding: 0 4px;
-    text-align: center;
-    font-size: 0.8em;
-    color: #7f7f7f;
-}
-
-.subtitle::-moz-selection {
-    color: #fff;
-}
-
-.subtitle::selection {
-    color: #fff;
-}
-
 #appPassword {
     font-family: monospace;
     font-size: 1.4em;
@@ -88,7 +55,6 @@ a:hover {
     border: 2px solid #000;
     border-bottom: 5px dotted;
     max-width: 800px;
-    margin: 0 auto 15px;
     padding: 2px;
 }
 
@@ -114,34 +80,15 @@ a:hover {
 
 /* buttons */
 div.button {
-    text-align: center;
+    margin-top:10px;    
     margin-bottom: 15px;
 }
-
-/* #appCopy {
-    margin-right: 0.4em;
-    font-weight: bold;
-    padding: 0.3em 1em;
-    background: #c0c0c0;
-    border: 2px solid #0c1217;
-    color: #000;
-    cursor: default;
-} */
 
 #appCopy, #appGenerate{
     cursor: hand;
     padding: 0.3em 1em;
     font-size: medium;
 }
-
-/* #appGenerate {
-    font-weight: bold;
-    padding: 0.3em 1em;
-    background: #c0c0c0;
-    border: 2px solid #0c1217;
-    color: #000;
-    cursor: default;
-} */
 
 /* length of password */
 #appLength {
@@ -152,86 +99,18 @@ div.button {
     color: #000;
     margin: 0;
     padding: 2px;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
-/* #appLength:focus {
-    border: 2px dashed #fff;
-    outline: none;
-} */
 
-#appSlider {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 200px;
-    height: 32px;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    outline: none;
-    cursor: default;
-    position: absolute;
-    top: 0;
-    left: 100px;
-}
-
-#appSlider::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    width: 200px;
-    height: 2px;
-    background: #000;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    cursor: default;
-}
-
-#appSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 32px;
-    background: #1a4168;
-    margin: -15px 0 0;
-    border: 1px solid #79a6d2;
-    padding: 0;
-    cursor: default;
-}
-
-#appSlider::-moz-range-track {
-    -moz-appearance: none;
-    width: 200px;
-    height: 2px;
-    background: #fff;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    cursor: default;
-}
-
-#appSlider::-moz-range-thumb {
-    -moz-appearance: none;
-    width: 16px;
-    height: 32px;
-    background: #1a4168;
-    margin: -15px 0 0;
-    border: 1px solid #79a6d2;
-    padding: 0;
-    cursor: default;
-}
-
-.length {
-    width: 300px;
-    height: 32px;
-    position: relative;
-    margin: 0 auto 15px;
+span {
+    font-size: 16px;
+    margin-right:5px;
 }
 
 /* checkbox */
-.checkbox {
-    width: fit-content;
-    margin: 0 auto 15px;
+
+.checkbox{
+    margin-top:10px;    
 }
 
 .checkbox label {
@@ -272,39 +151,35 @@ div.button {
 
 /* exception */
 div.exception {
-    width: 300px;
-    margin: 0 auto 15px;
-    overflow: hidden;
-}
-
-div.exception span {
-    line-height: 32px;
-    font-size: 16px;
+    margin-top:10px;    
 }
 
 div.exception input {
-    float: right;
     width: 200px;
     height: 24px;
     font-size: 16px;
     line-height: 1;
     color: #000;
-    margin: 0;
+    margin-top: 10px;
     padding: 2px;
 }
 
-    /* div.exception input:focus {
-        border: 2px dashed #fff;
-        outline: none;
-    } */
 
 /* footer */
 footer {
-    max-width: 800px;
-    margin: 0 auto;
     background-color:ghostwhite;
+    width: 810px;
 }
 
+fieldset{
+    width: 780px;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
