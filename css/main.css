@@ -6,7 +6,7 @@ html {
     line-height: 1.2;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: verdana;
     min-width: 320px;
 }
 
@@ -118,7 +118,7 @@ div.button {
     margin-bottom: 15px;
 }
 
-#appCopy {
+/* #appCopy {
     margin-right: 0.4em;
     font-weight: bold;
     padding: 0.3em 1em;
@@ -126,20 +126,22 @@ div.button {
     border: 2px solid #0c1217;
     color: #000;
     cursor: default;
-}
+} */
 
 #appCopy, #appGenerate{
     cursor: hand;
+    padding: 0.3em 1em;
+    font-size: medium;
 }
 
-#appGenerate {
+/* #appGenerate {
     font-weight: bold;
     padding: 0.3em 1em;
     background: #c0c0c0;
     border: 2px solid #0c1217;
     color: #000;
     cursor: default;
-}
+} */
 
 /* length of password */
 #appLength {
@@ -155,10 +157,10 @@ div.button {
     left: 0;
 }
 
-#appLength:focus {
+/* #appLength:focus {
     border: 2px dashed #fff;
     outline: none;
-}
+} */
 
 #appSlider {
     -webkit-appearance: none;
@@ -248,7 +250,7 @@ div.button {
     margin: 0;
     border: 2px solid #000;
     padding: 0;
-    outline: none;
+    /* outline: none; */
     cursor: default;
     position: absolute;
     top: 50%;
@@ -281,7 +283,6 @@ div.exception span {
 }
 
 div.exception input {
-    font-family: monospace;
     float: right;
     width: 200px;
     height: 24px;
@@ -292,10 +293,10 @@ div.exception input {
     padding: 2px;
 }
 
-div.exception input:focus {
-    border: 2px dashed #fff;
-    outline: none;
-}
+    /* div.exception input:focus {
+        border: 2px dashed #fff;
+        outline: none;
+    } */
 
 /* footer */
 footer {
